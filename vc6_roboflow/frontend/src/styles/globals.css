@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --ff:'IBM Plex Mono',monospace;--fd:'Syne',sans-serif;
+  --bg:#07090d;--bg2:#0d1117;--bg3:#141a21;--bg4:#1a2130;
+  --bd:#1f2937;--tx:#e2eaf3;--tx2:#7d8fa1;
+  --ac:#00d4aa;--a2:#38bdf8;--rd:#f87171;--yw:#fbbf24;--pu:#a78bfa;--gr:#4ade80;
+}
+.light{
+  --bg:#f0f4f8;--bg2:#fff;--bg3:#e8edf2;--bg4:#dde3ea;
+  --bd:#d1d9e0;--tx:#1c2b3a;--tx2:#57697a;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body,#root{height:100%;overflow:hidden;font-family:var(--ff);
+  background:var(--bg);color:var(--tx);font-size:13px;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--bd);border-radius:2px}
+
+.card{background:var(--bg2);border:1px solid var(--bd);border-radius:12px;transition:border-color .2s,box-shadow .2s}
+.card-inner{background:var(--bg3);border:1px solid var(--bd);border-radius:8px}
+.active-card{border-color:var(--ac)!important;box-shadow:0 0 0 1px var(--ac),0 0 24px rgba(0,212,170,.08)}
+
+.btn{background:var(--ac);color:#000;border:none;border-radius:8px;padding:10px 22px;
+  font-family:var(--ff);font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+.btn:hover:not(:disabled){opacity:.85;transform:translateY(-1px);box-shadow:0 4px 18px rgba(0,212,170,.35)}
+.btn:disabled{opacity:.3;cursor:not-allowed;transform:none!important}
+.btn-sm{background:transparent;color:var(--tx);border:1px solid var(--bd);border-radius:7px;
+  padding:6px 12px;font-family:var(--ff);font-size:10px;cursor:pointer;transition:all .2s}
+.btn-sm:hover{border-color:var(--a2);color:var(--a2)}
+
+.dot{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;
+  border-radius:50%;font-size:9px;font-weight:700;background:var(--bg4);color:var(--tx2);
+  border:1px solid var(--bd);transition:all .2s;flex-shrink:0}
+.dot.on{background:var(--ac);color:#000;border-color:var(--ac)}
+.dot.ok{background:var(--ac);color:#000;border-color:var(--ac)}
+
+.prog{height:3px;background:var(--bd);border-radius:2px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--ac),var(--a2));border-radius:2px;transition:width .4s ease}
+
+.thumb{cursor:pointer;border-radius:7px;overflow:hidden;border:2px solid transparent;transition:all .18s}
+.thumb:hover{border-color:var(--a2);transform:translateY(-2px)}
+.thumb.sel{border-color:var(--ac);box-shadow:0 0 0 1px var(--ac)}
+
+.pdot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ac);animation:pulse-a 2s infinite}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse-a{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes bump{0%,100%{transform:scale(1)}40%{transform:scale(1.25)}}
+@keyframes fIn{0%,100%{background:var(--bg3)}50%{background:rgba(0,212,170,.2)}}
+@keyframes fOut{0%,100%{background:var(--bg3)}50%{background:rgba(248,113,113,.18)}}
+
+.fu{animation:fadeUp .28s ease forwards}
+.spin{animation:spin .8s linear infinite}
+.flash-in{animation:fIn .4s ease}
+.flash-out{animation:fOut .4s ease}
+.skeleton{background:linear-gradient(90deg,var(--bg3) 25%,var(--bg4) 50%,var(--bg3) 75%);
+  background-size:200%;animation:shimmer 1.5s infinite;border-radius:5px}
