@@ -1,4 +1,4 @@
-🚀 VisionCount AI
+##🚀 VisionCount AI
 Real-Time Object & Gender Flow Analytics using Computer Vision
 
 
@@ -113,13 +113,22 @@ output video URL
 DELETE /api/job/{job_id}
 
 
-📊 Output
+##📊 Output
 🎥 Video Output
 Bounding boxes
 Labels (Male, Female, Vehicle, Animal, etc.)
 Counting line
 IN / OUT counters
 
+## 📸 Screenshots
+
+![Output1](vc6_roboflow/assets/vc1.png)
+![Output2](vc6_roboflow/assets/vc2.png)
+![Output3](vc6_roboflow/assets/vc3.png)
+
+## 🎬 Demo Video
+
+[![Watch Demo](vc6_roboflow/assets/vc1.png)](vc6_roboflow/assets/vc1video.mp4)
 
 
 📈 Analytics JSON
